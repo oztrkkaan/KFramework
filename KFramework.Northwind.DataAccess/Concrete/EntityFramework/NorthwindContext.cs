@@ -1,4 +1,4 @@
-﻿using DevFramework.Northwind.Entities.Concrete;
+﻿using KFramework.Northwind.Entities.Concrete;
 using KFramework.Northwind.DataAccess.Concrete.EntityFramework.Mappings;
 using System;
 using System.Collections.Generic;

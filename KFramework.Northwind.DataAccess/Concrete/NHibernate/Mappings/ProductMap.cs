@@ -1,4 +1,4 @@
-﻿using DevFramework.Northwind.Entities.Concrete;
+﻿using KFramework.Northwind.Entities.Concrete;
 using FluentNHibernate.Conventions.Helpers;
 using FluentNHibernate.Mapping;
 using System;

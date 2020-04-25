@@ -1,4 +1,4 @@
-﻿using DevFramework.Northwind.Entities.Concrete;
+﻿using KFramework.Northwind.Entities.Concrete;
 using KFramework.Core.DataAccess;
 using System;
 using System.Collections.Generic;
