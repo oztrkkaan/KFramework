@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFramework.Core", "KFramework.Core\KFramework.Core.csproj", "{3C07959F-1AED-4A0E-AB8A-AA602A49B6A3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFramework.Northwind.Entities", "DevFramework.Northwind.Entities\KFramework.Northwind.Entities.csproj", "{61304190-F903-4328-B07D-5DA32A75151F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFramework.Northwind.DataAccess", "KFramework.Northwind.DataAccess\KFramework.Northwind.DataAccess.csproj", "{3E35DAFB-8BB0-43B5-B693-CDE51C34CD33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFramework.Northwind.Business", "KFramework.Northwind.Business\KFramework.Northwind.Business.csproj", "{1E3AD46A-3276-4D2D-9E48-8DF985626806}"
@@ -43,20 +39,16 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "KFramework.Northwind.WcfSer
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFramework.Northwind.Entities", "KFramework.Northwind.Entities\KFramework.Northwind.Entities.csproj", "{95CE1C20-FACB-4FCE-98D0-67FFB7CADCB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFramework.Core", "KFramework.Core\KFramework.Core.csproj", "{30770762-55D7-43D5-91BB-67390EC4DDA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C07959F-1AED-4A0E-AB8A-AA602A49B6A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C07959F-1AED-4A0E-AB8A-AA602A49B6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C07959F-1AED-4A0E-AB8A-AA602A49B6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C07959F-1AED-4A0E-AB8A-AA602A49B6A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61304190-F903-4328-B07D-5DA32A75151F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61304190-F903-4328-B07D-5DA32A75151F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61304190-F903-4328-B07D-5DA32A75151F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61304190-F903-4328-B07D-5DA32A75151F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E35DAFB-8BB0-43B5-B693-CDE51C34CD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3E35DAFB-8BB0-43B5-B693-CDE51C34CD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E35DAFB-8BB0-43B5-B693-CDE51C34CD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -89,6 +81,14 @@ Global
 		{68153912-76CE-4AFB-BCF9-E5F7FC237348}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68153912-76CE-4AFB-BCF9-E5F7FC237348}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{68153912-76CE-4AFB-BCF9-E5F7FC237348}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{95CE1C20-FACB-4FCE-98D0-67FFB7CADCB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CE1C20-FACB-4FCE-98D0-67FFB7CADCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CE1C20-FACB-4FCE-98D0-67FFB7CADCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CE1C20-FACB-4FCE-98D0-67FFB7CADCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30770762-55D7-43D5-91BB-67390EC4DDA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30770762-55D7-43D5-91BB-67390EC4DDA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30770762-55D7-43D5-91BB-67390EC4DDA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30770762-55D7-43D5-91BB-67390EC4DDA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

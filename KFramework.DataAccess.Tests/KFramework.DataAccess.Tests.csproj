@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFrameworkTests\EntityFrameworkTest.cs" />
+    <Compile Include="NHibernateTests\NHibernateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,17 +66,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DevFramework.Northwind.Entities\KFramework.Northwind.Entities.csproj">
-      <Project>{61304190-F903-4328-B07D-5DA32A75151F}</Project>
-      <Name>KFramework.Northwind.Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KFramework.Core\KFramework.Core.csproj">
-      <Project>{3C07959F-1AED-4A0E-AB8A-AA602A49B6A3}</Project>
+      <Project>{30770762-55D7-43D5-91BB-67390EC4DDA6}</Project>
       <Name>KFramework.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\KFramework.Northwind.DataAccess\KFramework.Northwind.DataAccess.csproj">
       <Project>{3E35DAFB-8BB0-43B5-B693-CDE51C34CD33}</Project>
       <Name>KFramework.Northwind.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KFramework.Northwind.Entities\KFramework.Northwind.Entities.csproj">
+      <Project>{95CE1C20-FACB-4FCE-98D0-67FFB7CADCB5}</Project>
+      <Name>KFramework.Northwind.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

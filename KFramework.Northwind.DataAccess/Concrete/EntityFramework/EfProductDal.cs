@@ -1,12 +1,9 @@
-﻿using KFramework.Northwind.Entities.Concrete;
-using KFramework.Core.DataAccess.EntityFramework;
+﻿using KFramework.Core.DataAccess.EntityFramework;
 using KFramework.Northwind.DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using KFramework.Northwind.Entities.Concrete;
 
 namespace KFramework.Northwind.DataAccess.Concrete.EntityFramework
 {

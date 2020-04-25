@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{61304190-F903-4328-B07D-5DA32A75151F}</ProjectGuid>
+    <ProjectGuid>{95CE1C20-FACB-4FCE-98D0-67FFB7CADCB5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DevFramework.Northwind.Entities</RootNamespace>
-    <AssemblyName>DevFramework.Northwind.Entities</AssemblyName>
+    <RootNamespace>KFramework.Northwind.Entities</RootNamespace>
+    <AssemblyName>KFramework.Northwind.Entities</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KFramework.Core\KFramework.Core.csproj">
-      <Project>{3C07959F-1AED-4A0E-AB8A-AA602A49B6A3}</Project>
+      <Project>{30770762-55D7-43D5-91BB-67390EC4DDA6}</Project>
       <Name>KFramework.Core</Name>
     </ProjectReference>
   </ItemGroup>
