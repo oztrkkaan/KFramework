@@ -41,13 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplexTypes\ProductDetail.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ComplexTypes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\KFramework.Core\KFramework.Core.csproj">
       <Project>{30770762-55D7-43D5-91BB-67390EC4DDA6}</Project>

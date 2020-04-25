@@ -1,11 +1,5 @@
 ﻿using KFramework.Northwind.Entities.Concrete;
-using FluentNHibernate.Conventions.Helpers;
 using FluentNHibernate.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KFramework.Northwind.DataAccess.Concrete.NHibernate.Mappings
 {
