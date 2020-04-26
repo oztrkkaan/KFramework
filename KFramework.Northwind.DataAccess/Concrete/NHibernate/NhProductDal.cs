@@ -14,7 +14,6 @@ namespace KFramework.Northwind.DataAccess.Concrete.NHibernate
         {
             _nHibernateHelper = nHibernateHelper;
         }
-
         public List<ProductDetail> GetProductDetails()
         {
             using (var session = _nHibernateHelper.OpenSession())
