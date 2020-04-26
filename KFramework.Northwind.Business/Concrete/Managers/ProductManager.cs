@@ -25,6 +25,8 @@ namespace KFramework.Northwind.Business.Concrete.Managers
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
+        [LogAspect(typeof(DatabaseLogger))]
+        [LogAspect(typeof(FileLogger))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
@@ -38,6 +40,7 @@ namespace KFramework.Northwind.Business.Concrete.Managers
 
             return _productDal.GetList();
         }
+   
         public Product GetById(int id)
         {
             return _productDal.Get(p => p.ProductId == id);

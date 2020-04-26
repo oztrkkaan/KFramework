@@ -1,5 +1,6 @@
 ﻿using KFramework.MvcWebUI.Models;
 using KFramework.Northwind.Business.Abstract;
+using KFramework.Northwind.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,16 @@ namespace KFramework.MvcWebUI.Controllers
                 Products = _productService.GetAll()
             };
             return View(model);
+        }
+        public string Add()
+        {
+            _productService.Add(new Product { 
+            CategoryId=1,
+            ProductName ="GSM",
+            QuantityPerUnit="1",
+            UnitPrice=12
+            });
+            return "Added";
         }
     }
 }
