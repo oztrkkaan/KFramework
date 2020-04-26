@@ -1,3 +1,5 @@
+using KFramework.Core.Utilities.Mvc.Infrastructure;
+using KFramework.Northwind.Business.DependencyResolvers.Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace KFramework.MvcWebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
         }
     }
 }

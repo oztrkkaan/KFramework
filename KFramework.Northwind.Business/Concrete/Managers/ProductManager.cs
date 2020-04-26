@@ -9,6 +9,8 @@ using System.Transactions;
 using KFramework.Core.Aspects.PostSharp.ValidationAspects;
 using KFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using KFramework.Core.Aspects.PostSharp.CacheAspects;
+using KFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using KFramework.Core.Aspects.PostSharp.LogAspects;
 
 namespace KFramework.Northwind.Business.Concrete.Managers
 {
@@ -23,16 +25,18 @@ namespace KFramework.Northwind.Business.Concrete.Managers
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
         }
         [CacheAspect(typeof(MemoryCacheManager))]
+        [LogAspect(typeof(DatabaseLogger))]
+        [LogAspect(typeof(FileLogger))]
+
         public List<Product> GetAll()
         {
 
-            throw new NotImplementedException();
+            return _productDal.GetList();
         }
         public Product GetById(int id)
         {
