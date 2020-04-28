@@ -1,19 +1,15 @@
-﻿using KFramework.Core.CrossCuttingConcerns.FluentValidation;
-using KFramework.Northwind.Business.Abstract;
+﻿using KFramework.Northwind.Business.Abstract;
 using KFramework.Northwind.Business.ValidationRules.FluentValidation;
 using KFramework.Northwind.DataAccess.Abstract;
 using KFramework.Northwind.Entities.Concrete;
-using System;
 using System.Collections.Generic;
 using System.Transactions;
 using KFramework.Core.Aspects.PostSharp.ValidationAspects;
-using KFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
-using KFramework.Core.Aspects.PostSharp.CacheAspects;
 using KFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using KFramework.Core.Aspects.PostSharp.LogAspects;
-using KFramework.Core.Aspects.PostSharp.ExceptionAspects;
-using FluentValidation;
 using KFramework.Core.Aspects.PostSharp.PerformanceAspects;
+using PostSharp.Aspects.Dependencies;
+using KFramework.Core.Aspects.PostSharp.AuthorizationAspects;
 
 namespace KFramework.Northwind.Business.Concrete.Managers
 {
@@ -29,8 +25,7 @@ namespace KFramework.Northwind.Business.Concrete.Managers
 
         //[LogAspect(typeof(DatabaseLogger))]
         //[LogAspect(typeof(FileLogger))]
-      //  [ExpectionLogAspect(typeof(DatabaseLogger))]
-
+        //[ExpectionLogAspect(typeof(DatabaseLogger))]
         [FluentValidationAspect(typeof(ProductValidator))]
         public Product Add(Product product)
         {
@@ -40,6 +35,7 @@ namespace KFramework.Northwind.Business.Concrete.Managers
         [LogAspect(typeof(DatabaseLogger))]
         [LogAspect(typeof(FileLogger))]
         [PerformanceCounterAspect(2)]
+        [SecuredOperation(Roles="Admin")]
         public List<Product> GetAll()
         {
             System.Threading.Thread.Sleep(5000);
