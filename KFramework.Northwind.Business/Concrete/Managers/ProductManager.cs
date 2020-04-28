@@ -11,6 +11,9 @@ using KFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using KFramework.Core.Aspects.PostSharp.CacheAspects;
 using KFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using KFramework.Core.Aspects.PostSharp.LogAspects;
+using KFramework.Core.Aspects.PostSharp.ExceptionAspects;
+using FluentValidation;
+using KFramework.Core.Aspects.PostSharp.PerformanceAspects;
 
 namespace KFramework.Northwind.Business.Concrete.Managers
 {
@@ -24,20 +27,22 @@ namespace KFramework.Northwind.Business.Concrete.Managers
             _productDal = productDal;
         }
 
+        //[LogAspect(typeof(DatabaseLogger))]
+        //[LogAspect(typeof(FileLogger))]
+      //  [ExpectionLogAspect(typeof(DatabaseLogger))]
+
         [FluentValidationAspect(typeof(ProductValidator))]
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
         }
-        [CacheAspect(typeof(MemoryCacheManager))]
+       
         [LogAspect(typeof(DatabaseLogger))]
         [LogAspect(typeof(FileLogger))]
-
+        [PerformanceCounterAspect(2)]
         public List<Product> GetAll()
         {
-
+            System.Threading.Thread.Sleep(5000);
             return _productDal.GetList();
         }
    
@@ -46,7 +51,7 @@ namespace KFramework.Northwind.Business.Concrete.Managers
             return _productDal.Get(p => p.ProductId == id);
         }
 
-
+        
         public void TransactionalOperation(Product product1, Product product2)
         {
             using (TransactionScope scope = new TransactionScope())

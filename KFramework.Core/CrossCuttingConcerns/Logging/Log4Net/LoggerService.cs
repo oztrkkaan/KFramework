@@ -17,7 +17,7 @@ namespace KFramework.Core.CrossCuttingConcerns.Logging.Log4Net
         {
             _log = log;
         }
-        public bool IsInfoEnabled => _log.IsDebugEnabled;
+        public bool IsInfoEnabled => _log.IsInfoEnabled;
         public bool IsDebugEnabled => _log.IsDebugEnabled;
         public bool IsWarnEnabled => _log.IsWarnEnabled;
         public bool IsFatalEnabled => _log.IsFatalEnabled;
@@ -34,14 +34,14 @@ namespace KFramework.Core.CrossCuttingConcerns.Logging.Log4Net
         {
             if (IsDebugEnabled)
             {
-                _log.Info(logMessage);
+                _log.Debug(logMessage);
             }
         }
         public void Warn(object logMessage)
         {
             if (IsWarnEnabled)
             {
-                _log.Info(logMessage);
+                _log.Warn(logMessage);
             }
         }
 
@@ -49,7 +49,7 @@ namespace KFramework.Core.CrossCuttingConcerns.Logging.Log4Net
         {
             if (IsFatalEnabled)
             {
-                _log.Info(logMessage);
+                _log.Fatal(logMessage);
             }
         }
 
@@ -57,7 +57,7 @@ namespace KFramework.Core.CrossCuttingConcerns.Logging.Log4Net
         {
             if (IsErrorEnabled)
             {
-                _log.Info(logMessage);
+                _log.Error(logMessage);
             }
         }
 

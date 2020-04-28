@@ -31,7 +31,7 @@ namespace KFramework.MvcWebUI.Controllers
             CategoryId=1,
             ProductName ="GSM",
             QuantityPerUnit="1",
-            UnitPrice=12
+            UnitPrice=10
             });
             return "Added";
         }
