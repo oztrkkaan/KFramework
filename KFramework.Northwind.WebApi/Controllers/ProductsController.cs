@@ -1,5 +1,6 @@
 ﻿using KFramework.Northwind.Business.Abstract;
 using KFramework.Northwind.Entities.Concrete;
+using KFramework.Northwind.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace KFramework.Northwind.WebApi.Controllers
             _productService = productService;
         }
 
-        public List<Product> Get()
+        public List<ProductDto> Get()
         {
             return _productService.GetAll();
         }

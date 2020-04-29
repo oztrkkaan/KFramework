@@ -1,4 +1,5 @@
-﻿using KFramework.Core.DataAccess;
+﻿using AutoMapper;
+using KFramework.Core.DataAccess;
 using KFramework.Core.DataAccess.EntityFramework;
 using KFramework.Core.DataAccess.NHibernate;
 using KFramework.Northwind.Business.Abstract;
@@ -23,12 +24,14 @@ namespace KFramework.Northwind.Business.DependencyResolvers.Ninject
         {
             Bind<IProductService, ProductManager>().To<ProductManager>().InSingletonScope();
             Bind<IProductDal>().To<EfProductDal>().InSingletonScope();
-            Bind<IUserService>().To<UserManager>();
+            Bind<IUserService>().To<UserManager>().InSingletonScope();
             Bind<IUserDal>().To<EfUserDal>();
 
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
             Bind<DbContext>().To<NorthwindContext>();
             Bind<NHibernateHelper>().To<SqlServerHelper>();
         }
+     
+
     }
 }

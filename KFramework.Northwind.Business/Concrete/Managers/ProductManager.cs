@@ -10,17 +10,21 @@ using KFramework.Core.Aspects.PostSharp.LogAspects;
 using KFramework.Core.Aspects.PostSharp.PerformanceAspects;
 using PostSharp.Aspects.Dependencies;
 using KFramework.Core.Aspects.PostSharp.AuthorizationAspects;
+using System.Linq;
+using AutoMapper;
+using KFramework.Northwind.Entities.DTOs;
 
 namespace KFramework.Northwind.Business.Concrete.Managers
 {
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
+        private IMapper _mapper;
 
-
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal, IMapper mapper)
         {
             _productDal = productDal;
+            _mapper = mapper;
         }
 
         //[LogAspect(typeof(DatabaseLogger))]
@@ -35,11 +39,11 @@ namespace KFramework.Northwind.Business.Concrete.Managers
         [LogAspect(typeof(DatabaseLogger))]
         [LogAspect(typeof(FileLogger))]
         [PerformanceCounterAspect(2)]
-        [SecuredOperation(Roles="Admin")]
-        public List<Product> GetAll()
+        //[SecuredOperation(Roles="Admin,Student,Editor")]
+        public List<ProductDto> GetAll()
         {
-            System.Threading.Thread.Sleep(5000);
-            return _productDal.GetList();
+            var result = _mapper.Map<List<ProductDto>>(_productDal.GetList());
+            return result;
         }
    
         public Product GetById(int id)

@@ -1,4 +1,5 @@
 ﻿using KFramework.Northwind.Entities.Concrete;
+using KFramework.Northwind.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace KFramework.MvcWebUI.Models
 {
     public class ProductListViewModel
     {
-        public List<Product> Products { get; set; }
+        public List<ProductDto> Products { get; set; }
 
     }
 }
